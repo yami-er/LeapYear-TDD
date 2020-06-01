@@ -1,20 +1,25 @@
-import org.junit.Test; 
+
+import org.junit.Assert;
+import org.junit.Test;
 public class LeapYearTest {
-  @Test 
-  public void testLeapYear(){
-    LeapYear year = new LeapYear();
-    
-    System.out.println(year.isLeapYear(2000));
-    System.out.println(year.isLeapYear(1996));
-    System.out.println(year.isLeapYear(1990));
-    
-    
-  
-    
-  }
- 
-  } 
-  
-  
-  
-  
+
+    @Test
+    public void leapYearDivisibleBy4() {
+        Assert.assertTrue(LeapYear.IsLeapYear(1996));
+    }
+
+    @Test
+    public void yearsNotDivisbleBy400() {
+        Assert.assertFalse(LeapYear.IsLeapYear(2001));
+    }
+
+    @Test
+    public void leapYearsNotDivisbleBy100() {
+        Assert.assertFalse(LeapYear.IsLeapYear(1900));
+    }
+
+    @Test
+    public void leapYearsDivisibleByFourHundred() {
+        Assert.assertTrue(LeapYear.IsLeapYear(2000));
+    }
+}

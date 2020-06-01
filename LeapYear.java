@@ -1,14 +1,21 @@
 
-public class LeapYear{
-
-    public boolean isLeapYear(int year) 
-    { 
-        // If a year is muliplt of 4 and 400 but not 100 then it is a leap year 
-        if ((year % 4 == 0) &&((year % 100 !=0) ||(year % 400 == 0))){ 
-        return true;
-        }else{
+public class LeapYear {
+    public static boolean IsLeapYear(int year) {
+        if (isMultipleOf4(year) && ((isMultipleOf400(year))||(isNotDivisbleBy100(year)))) {
+            return true;
+        } else {
             return false;
         }
     }
-    
+
+    private static boolean isMultipleOf4(int year) {
+        return year % 4 == 0;
+    }
+    private static boolean isMultipleOf400(int year) {
+        return year % 400 == 0;
+    }
+    private static boolean isNotDivisbleBy100(int year) {
+        return year % 100 != 0;
+    }
+
 }
